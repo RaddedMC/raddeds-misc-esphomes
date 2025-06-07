@@ -67,7 +67,7 @@ light:
     # - HW: Restore mode - #
     restore_mode: RESTORE_DEFAULT_OFF
 
-# - HW: PWM output for light
+# - HW: PWM output for light on GPIO5 - #
 output:
   - platform: esp8266_pwm
     id: pwm_output
