@@ -4,6 +4,7 @@
 # -- HW: Hardware-specific rules
 # -- EXT: ESPHome extensions
 # -- NET: Networking / AP / Connectivity
+# -- HA: Home Assistant entities
 
 # - ENV: Globals - #
 esphome:

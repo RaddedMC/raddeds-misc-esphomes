@@ -1,0 +1,94 @@
+### Radded's config file for the Bright Smart Plug ###
+# Table:
+# -- ENV: Environment variables
+# -- HW: Hardware-specific rules
+# -- EXT: ESPHome extensions
+# -- NET: Networking / AP / Connectivity
+# -- HA: Home Assistant entities
+
+# - ENV: Globals - #
+esphome:
+  name: "PUT A NAME HERE" # TODO: Fill a name
+  friendly_name: "PUT A FRIENDLY NAME HERE" # TODO: Fill a friendly name
+
+# - HW: ESP8266 definitions - #
+esp8266:
+  board: esp01_1m
+
+# - EXT: Enable logging - #
+logger:
+
+# - NET: Enable Home Assistant API - #
+api:
+  encryption:
+    key: "PUT YOUR ENCRYPTION KEY HERE" # TODO: Fill an encryption key
+
+# - NET: Enable OTAs - #
+ota:
+  - platform: esphome
+    password: "PUT YOUR OTA PASSWORD HERE" # TODO: Fill an OTA password
+
+# - NET: Wifi information - #
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # - NET: Fallback hotspot - #
+  ap:
+    # No SSID means it should match the device name
+    password: "PUT YOUR FALLBACK HOTSPOT PASSWORD HERE" # TODO: Fill a fallback hotspot password
+
+captive_portal:
+
+# - HW: Your device config here - #
+
+# - HA: Binary Sensors - #
+binary_sensor:
+  # - HW: Button on GPIO14 - #
+  # This button will be exposed as a Binary Sensor,
+  # and will change the state of the Relay switch when pressed.
+  - platform: gpio
+    pin:
+      number: GPIO14
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "Button"
+    on_press:
+      - switch.toggle: relay
+
+  # - HA: Status - #
+  # This changes state when the device goes offline.
+  - platform: status
+    name: "Status"
+
+# - HW: Relay on GPIO2 - #
+# Activates or deactivates the plug.
+# Will turn on or off the light_output LED based on its state.
+switch:
+  - platform: gpio
+    id: relay
+    name: None
+    # TODO: The entity ID becomes "switch.friendlyname_friendlyname". I don't know how to change this behaviour.
+    pin: GPIO12
+    on_turn_on:
+    - output.turn_off: light_output
+    on_turn_off:
+    - output.turn_on: light_output
+
+# - EXT: Status LED - #
+# Will change the state of light_output depending on various ESPHome errors.
+# For example, the light will turn on if the device loses Wi-Fi connection.
+light:
+  - platform: status_led
+    name: status
+    internal: True
+    output: light_output
+
+# - HW: LED on GPIO4 - #
+# The LED changes state depending on the factors defined above.
+output:
+  - id: light_output
+    platform: gpio
+    pin:
+      number: GPIO4
+      inverted: True
