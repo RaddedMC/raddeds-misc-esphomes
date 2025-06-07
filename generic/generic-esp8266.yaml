@@ -34,7 +34,7 @@ wifi:
 
   # - NET: Fallback hotspot - #
   ap:
-    ssid: !lambda 'return friendly_name + " Fallback Hotspot";'
+    # No SSID means it should match the device name
     password: "PUT YOUR FALLBACK HOTSPOT PASSWORD HERE" # TODO: Fill a fallback hotspot password
 
 captive_portal:
