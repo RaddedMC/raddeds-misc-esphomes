@@ -1,6 +1,7 @@
 # Bright Smart Plug
 This configuration is for the Bright Smart Plug, which has an **ESP8266 chip**.
 It is a very simple smart plug. There are many others of a similar design.
+More info for this device is available [here](https://templates.blakadder.com/bright_741235077565.html).
 
 Components:
 - Button
