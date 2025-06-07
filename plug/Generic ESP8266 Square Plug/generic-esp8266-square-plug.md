@@ -1,7 +1,10 @@
-# Bright Smart Plug
-This configuration is for the Bright Smart Plug, which has an **ESP8266 chip**.
-It is a very simple smart plug. There are many others of a similar design.
-More info for this device is available [here](https://templates.blakadder.com/bright_741235077565.html).
+# Generic ESP8266 Square Plug
+This configuration is for Generic **ESP8266** Square Plugs.
+It has been confirmed to work with the following models:
+- Bright Smart Plug
+- Globe Smart Plug 50000
+
+More info for this device is available [here](https://templates.blakadder.com/bright_741235077565.html). If your device looks like this, it is likely compatible with this configuration.
 
 Components:
 - Button
