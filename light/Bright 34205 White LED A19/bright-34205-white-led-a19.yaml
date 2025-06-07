@@ -73,3 +73,8 @@ output:
     id: pwm_output
     pin: GPIO5
     frequency: 1000 Hz
+
+# - HA: Status - #
+binary_sensor:
+  - platform: status
+    name: "Status"

@@ -13,6 +13,9 @@ Components:
     - GPIO13
     - I don't know what this does, so I skipped it in the config
 
+- Status
+    - This changes state when the device goes offline.
+
 Extra features:
 - Restore mode:
     - When the light loses power, it will return to its previous brightness level.

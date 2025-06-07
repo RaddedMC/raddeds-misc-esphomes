@@ -24,3 +24,6 @@ Components:
     - Inverted
     - Set as the ESPHome status LED
     - State NOT exposed in Home Assistant
+
+- Status
+    - This changes state when the device goes offline.

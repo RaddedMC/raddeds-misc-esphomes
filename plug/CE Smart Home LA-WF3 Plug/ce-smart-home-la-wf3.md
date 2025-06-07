@@ -28,3 +28,6 @@ Components:
     - Inverted
     - Only shows the state of the outlet
     - State NOT exposed in Home Assistant
+
+- Status
+    - This changes state when the device goes offline.
