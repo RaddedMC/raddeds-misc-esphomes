@@ -18,6 +18,7 @@ Components:
     - State exposed and controllable in Home Assistant
     - When activated, turns on the LED.
     - When deactivated, turns off the LED.
+    - Will always be ON when the device is restarted.
 
 - LED
     - GPIO14

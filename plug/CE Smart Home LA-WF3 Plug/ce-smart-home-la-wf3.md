@@ -16,6 +16,7 @@ Components:
     - State exposed and controllable in Home Assistant
     - When activated, turns on the Link/Blue LED.
     - When deactivated, turns off the Link/Blue LED.
+    - Will always be ON when the device is restarted.
 
 - LED (Link / Blue)
     - GPIO4

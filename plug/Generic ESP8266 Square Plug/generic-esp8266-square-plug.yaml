@@ -68,12 +68,12 @@ switch:
   - platform: gpio
     id: relay
     name: None
-    # TODO: The entity ID becomes "switch.friendlyname_friendlyname". I don't know how to change this behaviour.
     pin: GPIO12
     on_turn_on:
     - output.turn_off: light_output
     on_turn_off:
     - output.turn_on: light_output
+    restore_mode: ALWAYS_ON
 
 # - EXT: Status LED - #
 # Will change the state of light_output depending on various ESPHome errors.
@@ -83,7 +83,6 @@ light:
     name: status
     internal: True
     output: light_output
-    # TODO: After a reboot, the LED gets stuck on until the next state change.
 
 # - HW: LED on GPIO4 - #
 # The LED changes state depending on the factors defined above.
