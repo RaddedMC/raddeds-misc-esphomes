@@ -10,6 +10,8 @@
 esphome:
   name: "PUT A NAME HERE" # TODO: Fill a name
   friendly_name: "PUT A FRIENDLY NAME HERE" # TODO: Fill a friendly name
+  on_boot:
+    rtttl.play: "MegaLovChime:d=32,o=5,b=120: 16d1, 16d1, 64p, 16d1, 64p, 16a5., 32p, 16d"
 
 # - HW: ESP8266 definitions - #
 esp8266:
@@ -27,6 +29,8 @@ api:
 ota:
   - platform: esphome
     password: "PUT YOUR OTA PASSWORD HERE" # TODO: Fill an OTA password
+    on_error:
+      rtttl.play: "Sadge:d=8,o=4,b=120: 16b, 64p, 8c, 16b, 64p, 8c"
 
 # - NET: Wifi information - #
 wifi:
@@ -37,6 +41,9 @@ wifi:
   ap:
     # No SSID means it should match the device name
     password: "PUT YOUR FALLBACK HOTSPOT PASSWORD HERE" # TODO: Fill a fallback hotspot password
+
+  on_error:
+    rtttl.play: "Sadge:d=8,o=4,b=120: 16b, 64p, 8c, 16b, 64p, 8c"
 
 captive_portal:
 
@@ -69,6 +76,7 @@ binary_sensor:
     name: "Smartbutton Button"
     on_press:
       - light.turn_on: "smartbutton_status_led"
-      - rtttl.play: "sound"
+      - rtttl.play: "boop:d=8,o=4,b=120: 32a, 64p, 64b"
       - delay: 30ms
       - light.turn_off: "smartbutton_status_led"
+      - rtttl.play: "happy_boop:d=8,o=4,b=120: 32a, 64p, 64b, 8p, 32e6,32g6, 32p, 32e6,8g6"
